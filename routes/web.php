@@ -31,3 +31,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/security', 'SecurityController@index')->name('security');
     Route::get('/service', 'ServiceController@index')->name('service');
 });
+
+Route::get('feedback_form', [App\Http\Controllers\FeedbackController::class,'showForm']);
+//Route::post('feedback_form', [App\Http\Controllers\FeedbackController::class, 'alert']);
+Route::post('alert', [App\Http\Controllers\FeedbackController::class,'alert']);
