@@ -29,7 +29,7 @@ class FeedbackController extends Controller
     }
 
     public function storeDB(Request $request) {
-        $newFeedback = new feedback;
+        $newFeedback = new feedback();
         $newFeedback->email = $request->email;
         $newFeedback->subject = $request->subject;
         $newfeedback->message = $request->message;
