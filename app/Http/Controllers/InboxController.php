@@ -18,7 +18,7 @@ class InboxController extends Controller
             $messages = Message::where('user_id', auth()->id())->orWhere('receiver', auth()->id())->orderBy('id', 'DESC')->get();
         }
 
-        return view('home', [
+        return view('inbox', [
             'users' => $users,
             'messages' => $messages ?? null
         ]);

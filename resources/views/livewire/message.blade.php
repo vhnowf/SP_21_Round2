@@ -1,7 +1,7 @@
 <div>
     <div class="row justify-content-center" wire:poll="mountComponent()">
         @if(auth()->user()->is_admin == true)
-            <div class="col-md-4" wire:init>
+            <div class="col-md-2" wire:init  style="padding:0">
                 <div class="card">
                     <div class="card-header">
                         Users
@@ -14,7 +14,7 @@
                                 @endphp
                                 <a href="{{ route('inbox.show', $user->id) }}" class="text-dark link">
                                     <li class="list-group-item" wire:click="getUser({{ $user->id }})" id="user_{{ $user->id }}">
-                                        <img class="img-fluid avatar" src="https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png">
+                                        <img style="max-width:30%" class="img-fluid avatar" src="https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png">
                                         @if($user->is_online) <i class="fa fa-circle text-success online-icon"></i> @endif {{ $user->name }}
                                         @if(filled($not_seen))
                                             <div class="badge badge-success rounded">{{ $not_seen->count() }}</div>
@@ -27,7 +27,7 @@
                 </div>
             </div>
         @endif
-        <div class="col-md-8">
+        <div class="col-md-10"   style="padding:0">
             <div class="card">
                 <div class="card-header">
                     @if(isset($clicked_user)) {{ $clicked_user->name }}
@@ -40,7 +40,7 @@
                         Messages
                     @endif
                 </div>
-                    <div class="card-body message-box">
+                    <div class="card-body message-box" style="height:600px;background:#E4E9F7">
                         @if(!$messages)
                             No messages to show
                         @else
@@ -107,10 +107,11 @@
                                     </button>
                                 </div>
                                 @endif
-                                <div class="col-md-4">
+                            </div>
+                            <br>
+                            <div class="col-md-3">
                                     <button class="btn btn-primary d-inline-block w-100"><i class="far fa-paper-plane"></i> Send</button>
                                 </div>
-                            </div>
                         </form>
                     </div>
                 @endif

@@ -20,8 +20,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+});
+
 Route::group(['middleware' => 'auth'], function (){
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', 'HomeController@aftersale')->name('homepage');
     Route::get('/inbox', [InboxController::class, 'index'])->name('inbox.index');
     Route::get('/inbox/{id}', [InboxController::class, 'show'])->name('inbox.show');
 });
