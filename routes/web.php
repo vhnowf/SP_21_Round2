@@ -29,3 +29,7 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/inbox', [InboxController::class, 'index'])->name('inbox.index');
     Route::get('/inbox/{id}', [InboxController::class, 'show'])->name('inbox.show');
 });
+
+Route::get('feedback_form', [App\Http\Controllers\FeedbackController::class,'showForm']);
+//Route::post('feedback_form', [App\Http\Controllers\FeedbackController::class, 'alert']);
+Route::post('alert', [App\Http\Controllers\FeedbackController::class,'alert']);
