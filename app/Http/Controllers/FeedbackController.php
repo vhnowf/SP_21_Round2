@@ -28,15 +28,6 @@ class FeedbackController extends Controller
         ], $messages);
     }
 
-    public function storeDB(Request $request) {
-        $newFeedback = new feedback();
-        $newFeedback->email = $request->email;
-        $newFeedback->subject = $request->subject;
-        $newfeedback->message = $request->message;
-
-        $newFeedback->save();
-    }
-
     public function alert(Request $request) {
         $messages = [
             'email.email' => 'Định dạng email không chính xác',
@@ -52,7 +43,7 @@ class FeedbackController extends Controller
             'message' => 'required|max:200'
         ], $messages);
 
-        $this->storeDB($request);
+        feedback::create($request->all());
         return view('alert');
     }
 }
