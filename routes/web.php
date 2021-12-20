@@ -25,7 +25,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], fu
 });
 
 Route::group(['middleware' => 'auth'], function (){
-    Route::get('/home', 'HomeController@aftersale')->name('homepage');
+    Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/inbox', [InboxController::class, 'index'])->name('inbox.index');
     Route::get('/inbox/{id}', [InboxController::class, 'show'])->name('inbox.show');
+    Route::get('/security', 'SecurityController@index')->name('security');
+    Route::get('/service', 'ServiceController@index')->name('service');
 });
