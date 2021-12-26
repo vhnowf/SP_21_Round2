@@ -16,12 +16,18 @@ class InboxController extends Controller
 
         if (auth()->user()->is_admin == false) {
             $messages = Message::where('user_id', auth()->id())->orWhere('receiver', auth()->id())->orderBy('id', 'DESC')->get();
-        }
+            return view('inbox', [
+                'users' => $users,
+                'messages' => $messages ?? null
+            ]);
+        }   
 
-        return view('inbox', [
+        return view('admin.inboxes.index', [
             'users' => $users,
             'messages' => $messages ?? null
         ]);
+
+        
     }
 
     public function show($id) {
@@ -39,11 +45,16 @@ class InboxController extends Controller
 
         if (auth()->user()->is_admin == false) {
             $messages = Message::where('user_id', auth()->id())->orWhere('receiver', auth()->id())->orderBy('id', 'DESC')->get();
+            return view('show', [
+                'users' => $users,
+                'messages' => $messages,
+                'sender' => $sender,
+            ]);
         } else {
             $messages = Message::where('user_id', $sender)->orWhere('receiver', $sender)->orderBy('id', 'DESC')->get();
         }
 
-        return view('show', [
+        return view('admin.inboxes.show', [
             'users' => $users,
             'messages' => $messages,
             'sender' => $sender,

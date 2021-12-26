@@ -22,6 +22,13 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
+
+    // Feedbacks 
+    Route::delete('feedbacks/destroy', 'FeedbackController@massDestroy')->name('feedbacks.massDestroy');
+    Route::resource('/feedbacks','FeedbackController')->only(['index','show']);
+
+    // Inboxs
+    Route::get('/inbox', [InboxController::class, 'index'])->name('inbox.index');
 });
 
 Route::group(['middleware' => 'auth'], function (){
@@ -30,8 +37,12 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('/inbox/{id}', [InboxController::class, 'show'])->name('inbox.show');
     Route::get('/security', 'SecurityController@index')->name('security');
     Route::get('/service', 'ServiceController@index')->name('service');
+    Route::resource('/return', 'ReturnProductController');
+    Route::post('return/media', 'ReturnController@storeMedia')->name('return.storeMedia');
+    Route::post('return/ckmedia', 'ReturnController@storeCKEditorImages')->name('return.storeCKEditorImages');
+  //  Route::get('/return', 'ReturnProductController@index')->name('return');
+    Route::get('/feedback', [FeedbackController::class,'show'])->name('feedback');
+    Route::post('alert', [FeedbackController::class,'alert']);
 });
 
-Route::get('feedback_form', [App\Http\Controllers\FeedbackController::class,'showForm']);
-//Route::post('feedback_form', [App\Http\Controllers\FeedbackController::class, 'alert']);
-Route::post('alert', [App\Http\Controllers\FeedbackController::class,'alert']);
+

@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\feedback;
+use App\Models\Feedback;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
 {
-    //
-    public function showForm() {
-        return view('feedback');
+    
+    public function show() {
+        return view('feedback.index');
     }
 
     public function handleForm(Request $request) {
@@ -43,7 +43,7 @@ class FeedbackController extends Controller
             'message' => 'required|max:200'
         ], $messages);
 
-        feedback::create($request->all());
+        Feedback::create($request->all());
         return view('alert');
     }
 }
