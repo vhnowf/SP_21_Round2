@@ -97,18 +97,113 @@ class FeedbackController extends Controller
     //    return redirect()->route('admin.feedbacks.index');
    // }
 
-    public function show(Feedback $feedback)
+  /**
+     * Show a feedback with certain $id
+     * @OA\Get (
+     *     path="/feedbacks/{id}",
+     *     tags={"Feedback"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="success",
+     *         @OA\JsonContent(
+     *             @OA\Property(
+     *                     type="object",
+     *                     @OA\Property(
+     *                         property="_id",
+     *                         type="number",
+     *                         example="1"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="email",
+     *                         type="string",
+     *                         example="example@gmail.com"
+     *                     ),
+     *                      @OA\Property(
+     *                         property="subject",
+     *                         type="string",
+     *                         example="example subject"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="message",
+     *                         type="string",
+     *                         example="example message"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="updated_at",
+     *                         type="string",
+     *                         example="2021-12-11T09:25:53.000000Z"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="created_at",
+     *                         type="string",
+     *                         example="2021-12-11T09:25:53.000000Z"
+     *                     )
+     *             )
+     *         )
+     *     )
+     * )
+     */ 
+   public function show(Request $request, $id)
     {
-        return response()->json($feedback);
+      $feedback = Feedback::where('id', $id);  
+      return response()->json($feedback);
     }
 
-    public function destroy()
-    {
-      //  abort_if(Gate::denies('coupon_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
-    //    $coupon->delete();
-
-        return back();
+  /**
+     * Delete a feedback with certain '$id' and return list of feedback
+     * @OA\Get (
+     *     path="/feedbacks/{id}/delete",
+     *     tags={"Feedback"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="success",
+     *         @OA\JsonContent(
+     *             @OA\Property(
+     *                 type="array",
+     *                 property="rows",
+     *                 @OA\Items(
+     *                     type="object",
+     *                     @OA\Property(
+     *                         property="_id",
+     *                         type="number",
+     *                         example="1"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="email",
+     *                         type="string",
+     *                         example="example@gmail.com"
+     *                     ),
+     *                      @OA\Property(
+     *                         property="subject",
+     *                         type="string",
+     *                         example="example subject"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="message",
+     *                         type="string",
+     *                         example="example message"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="updated_at",
+     *                         type="string",
+     *                         example="2021-12-11T09:25:53.000000Z"
+     *                     ),
+     *                     @OA\Property(
+     *                         property="created_at",
+     *                         type="string",
+     *                         example="2021-12-11T09:25:53.000000Z"
+     *                     )
+     *                 )
+     *             )
+     *         )
+     *     )
+     * )
+     */
+    public function destroy(Request $request, $id)
+    { 
+      $feedback = Feedback::where('id', $id)->delete();
+      $feedbacks = Feedback::all();
+      return response()->json($feedbacks);
     }
 
   //  public function massDestroy(MassDestroyCouponRequest $request)

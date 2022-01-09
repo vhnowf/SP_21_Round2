@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/feedback/store', [App\Http\Controllers\Api\FeedbackController::class,'alert']);
 Route::get('/feedbacks', [App\Http\Controllers\Api\Admin\FeedbackController::class,'index']);
 Route::post('/api/inbox/store', [App\Http\Controllers\Api\InboxController::class, 'index']);
+Route::get('/feedbacks/{id}', [App\Http\Controllers\Api\Admin\FeedbackController::class,'show']);
+Route::get('feedbacks/{id}/delete',[App\Http\Controllers\Api\Admin\FeedbackController::class,'destroy']);
