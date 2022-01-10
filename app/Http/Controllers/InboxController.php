@@ -9,7 +9,7 @@ use \App\Models\Message;
 
 class InboxController extends Controller
 {
-
+  
     public function index() {
         // Show just the users and not the admins as well
         $users = User::where('is_admin', false)->orderBy('id', 'DESC')->get();
@@ -25,11 +25,9 @@ class InboxController extends Controller
         return view('admin.inboxes.index', [
             'users' => $users,
             'messages' => $messages ?? null
-        ]);
-
-        
+        ]);  
     }
-
+   
     public function show($id) {
         if (auth()->user()->is_admin == false) {
             abort(404);

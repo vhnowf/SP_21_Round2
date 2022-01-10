@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 class FeedbackController extends Controller
 {
     
+
     public function show() {
         return view('feedback.index');
     }
-
+  
     public function handleForm(Request $request) {
         $messages = [
             'email.email' => 'Định dạng email không chính xác',
@@ -27,7 +28,7 @@ class FeedbackController extends Controller
             'message' => 'required|max:200'
         ], $messages);
     }
-
+    
     public function alert(Request $request) {
         $messages = [
             'email.email' => 'Định dạng email không chính xác',
@@ -43,7 +44,8 @@ class FeedbackController extends Controller
             'message' => 'required|max:200'
         ], $messages);
 
-        Feedback::create($request->all());
+        $feedback = Feedback::create($request->all());
+        dd($feedback);
         return view('alert');
     }
 }

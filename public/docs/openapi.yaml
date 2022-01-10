@@ -1,0 +1,1263 @@
+openapi: 3.0.3
+info:
+  title: 'Aftersales API - SP21'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/inbox:
+    get:
+      summary: 'Display messages'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Api-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: '1'
+                      message: Hello
+                      user_id: '2'
+                      receiver: '1'
+                      is_seen: '0'
+                      created_at: '2022-01-09 07:19:26'
+                      updated_at: '2022-01-09 07:19:26'
+                      file: null
+                      file_name: null
+                    -
+                      id: '2'
+                      message: 'Cho hoi san pham nay con hang khong a'
+                      user_id: '2'
+                      receiver: '1'
+                      is_seen: '0'
+                      created_at: '2022-01-09 07:19:45'
+                      updated_at: '2022-01-09 07:19:45'
+                      file: null
+                      file_name: null
+                    -
+                      id: '3'
+                      message: 'Minh xin gia voi a'
+                      user_id: '2'
+                      receiver: '1'
+                      is_seen: '0'
+                      created_at: '2022-01-09 07:19:53'
+                      updated_at: '2022-01-09 07:19:53'
+                      file: null
+                      file_name: null
+                    -
+                      id: '4'
+                      message: 'Khong biet giao hang co nhanh khong a'
+                      user_id: '2'
+                      receiver: '1'
+                      is_seen: '0'
+                      created_at: '2022-01-09 07:20:08'
+                      updated_at: '2022-01-09 07:20:08'
+                      file: null
+                      file_name: null
+                    -
+                      id: '5'
+                      message: 'Vang a, minh cam on'
+                      user_id: '2'
+                      receiver: '1'
+                      is_seen: '0'
+                      created_at: '2022-01-09 07:20:29'
+                      updated_at: '2022-01-09 07:20:29'
+                      file: null
+                      file_name: null
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: '1'
+                        message: Hello
+                        user_id: '2'
+                        receiver: '1'
+                        is_seen: '0'
+                        created_at: '2022-01-09 07:19:26'
+                        updated_at: '2022-01-09 07:19:26'
+                        file: null
+                        file_name: null
+                      -
+                        id: '2'
+                        message: 'Cho hoi san pham nay con hang khong a'
+                        user_id: '2'
+                        receiver: '1'
+                        is_seen: '0'
+                        created_at: '2022-01-09 07:19:45'
+                        updated_at: '2022-01-09 07:19:45'
+                        file: null
+                        file_name: null
+                      -
+                        id: '3'
+                        message: 'Minh xin gia voi a'
+                        user_id: '2'
+                        receiver: '1'
+                        is_seen: '0'
+                        created_at: '2022-01-09 07:19:53'
+                        updated_at: '2022-01-09 07:19:53'
+                        file: null
+                        file_name: null
+                      -
+                        id: '4'
+                        message: 'Khong biet giao hang co nhanh khong a'
+                        user_id: '2'
+                        receiver: '1'
+                        is_seen: '0'
+                        created_at: '2022-01-09 07:20:08'
+                        updated_at: '2022-01-09 07:20:08'
+                        file: null
+                        file_name: null
+                      -
+                        id: '5'
+                        message: 'Vang a, minh cam on'
+                        user_id: '2'
+                        receiver: '1'
+                        is_seen: '0'
+                        created_at: '2022-01-09 07:20:29'
+                        updated_at: '2022-01-09 07:20:29'
+                        file: null
+                        file_name: null
+                    items:
+                      type: object
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/inbox/{id}':
+    get:
+      summary: 'Display message boxes'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Api-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: '1'
+                      message: Hello
+                      user_id: '2'
+                      receiver: '1'
+                      is_seen: '0'
+                      created_at: '2022-01-09 07:19:26'
+                      updated_at: '2022-01-09 07:19:26'
+                      file: null
+                      file_name: null
+                    -
+                      id: '2'
+                      message: 'Cho hoi san pham nay con hang khong a'
+                      user_id: '2'
+                      receiver: '1'
+                      is_seen: '0'
+                      created_at: '2022-01-09 07:19:45'
+                      updated_at: '2022-01-09 07:19:45'
+                      file: null
+                      file_name: null
+                    -
+                      id: '3'
+                      message: 'Minh xin gia voi a'
+                      user_id: '2'
+                      receiver: '1'
+                      is_seen: '0'
+                      created_at: '2022-01-09 07:19:53'
+                      updated_at: '2022-01-09 07:19:53'
+                      file: null
+                      file_name: null
+                    -
+                      id: '4'
+                      message: 'Khong biet giao hang co nhanh khong a'
+                      user_id: '2'
+                      receiver: '1'
+                      is_seen: '0'
+                      created_at: '2022-01-09 07:20:08'
+                      updated_at: '2022-01-09 07:20:08'
+                      file: null
+                      file_name: null
+                    -
+                      id: '5'
+                      message: 'Vang a, minh cam on'
+                      user_id: '2'
+                      receiver: '1'
+                      is_seen: '0'
+                      created_at: '2022-01-09 07:20:29'
+                      updated_at: '2022-01-09 07:20:29'
+                      file: null
+                      file_name: null
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: '1'
+                        message: Hello
+                        user_id: '2'
+                        receiver: '1'
+                        is_seen: '0'
+                        created_at: '2022-01-09 07:19:26'
+                        updated_at: '2022-01-09 07:19:26'
+                        file: null
+                        file_name: null
+                      -
+                        id: '2'
+                        message: 'Cho hoi san pham nay con hang khong a'
+                        user_id: '2'
+                        receiver: '1'
+                        is_seen: '0'
+                        created_at: '2022-01-09 07:19:45'
+                        updated_at: '2022-01-09 07:19:45'
+                        file: null
+                        file_name: null
+                      -
+                        id: '3'
+                        message: 'Minh xin gia voi a'
+                        user_id: '2'
+                        receiver: '1'
+                        is_seen: '0'
+                        created_at: '2022-01-09 07:19:53'
+                        updated_at: '2022-01-09 07:19:53'
+                        file: null
+                        file_name: null
+                      -
+                        id: '4'
+                        message: 'Khong biet giao hang co nhanh khong a'
+                        user_id: '2'
+                        receiver: '1'
+                        is_seen: '0'
+                        created_at: '2022-01-09 07:20:08'
+                        updated_at: '2022-01-09 07:20:08'
+                        file: null
+                        file_name: null
+                      -
+                        id: '5'
+                        message: 'Vang a, minh cam on'
+                        user_id: '2'
+                        receiver: '1'
+                        is_seen: '0'
+                        created_at: '2022-01-09 07:20:29'
+                        updated_at: '2022-01-09 07:20:29'
+                        file: null
+                        file_name: null
+                    items:
+                      type: object
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of user(admin)'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  '/api/v1/feedback/{id}':
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Api-Version
+          description: ''
+          example: v1
+          schema:
+            type: string
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Undefined variable: errors (View: C:\xampp\htdocs\heroku\resources\views\feedback\index.blade.php)'
+                  exception: Facade\Ignition\Exceptions\ViewException
+                  file: 'C:\xampp\htdocs\heroku\resources\views/feedback/index.blade.php'
+                  line: 11
+                  trace:
+                    -
+                      file: 'C:\xampp\htdocs\heroku\resources\views/feedback/index.blade.php'
+                      line: 11
+                      function: handleError
+                      class: Illuminate\Foundation\Bootstrap\HandleExceptions
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Filesystem\Filesystem.php'
+                      line: 107
+                      function: require
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Filesystem\Filesystem.php'
+                      line: 108
+                      function: 'Illuminate\Filesystem\{closure}'
+                      class: Illuminate\Filesystem\Filesystem
+                      type: '::'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php'
+                      line: 58
+                      function: getRequire
+                      class: Illuminate\Filesystem\Filesystem
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\livewire\livewire\src\ComponentConcerns\RendersLivewireComponents.php'
+                      line: 35
+                      function: evaluatePath
+                      class: Illuminate\View\Engines\PhpEngine
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php'
+                      line: 61
+                      function: evaluatePath
+                      class: Livewire\CompilerEngineForIgnition
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\facade\ignition\src\Views\Engines\CompilerEngine.php'
+                      line: 37
+                      function: get
+                      class: Illuminate\View\Engines\CompilerEngine
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\View\View.php'
+                      line: 139
+                      function: get
+                      class: Facade\Ignition\Views\Engines\CompilerEngine
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\View\View.php'
+                      line: 122
+                      function: getContents
+                      class: Illuminate\View\View
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\View\View.php'
+                      line: 91
+                      function: renderContents
+                      class: Illuminate\View\View
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Http\Response.php'
+                      line: 69
+                      function: render
+                      class: Illuminate\View\View
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Http\Response.php'
+                      line: 35
+                      function: setContent
+                      class: Illuminate\Http\Response
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                      line: 794
+                      function: __construct
+                      class: Illuminate\Http\Response
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                      line: 763
+                      function: toResponse
+                      class: Illuminate\Routing\Router
+                      type: '::'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                      line: 695
+                      function: prepareResponse
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 128
+                      function: 'Illuminate\Routing\{closure}'
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php'
+                      line: 50
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 167
+                      function: handle
+                      class: Illuminate\Routing\Middleware\SubstituteBindings
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php'
+                      line: 127
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php'
+                      line: 103
+                      function: handleRequest
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php'
+                      line: 55
+                      function: handleRequestUsingNamedLimiter
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 167
+                      function: handle
+                      class: Illuminate\Routing\Middleware\ThrottleRequests
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 103
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                      line: 697
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                      line: 672
+                      function: runRouteWithinStack
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                      line: 636
+                      function: runRoute
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                      line: 625
+                      function: dispatchToRoute
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php'
+                      line: 167
+                      function: dispatch
+                      class: Illuminate\Routing\Router
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 128
+                      function: 'Illuminate\Foundation\Http\{closure}'
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\livewire\livewire\src\DisableBrowserCache.php'
+                      line: 19
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 167
+                      function: handle
+                      class: Livewire\DisableBrowserCache
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php'
+                      line: 21
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull.php'
+                      line: 31
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 167
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php'
+                      line: 21
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TrimStrings.php'
+                      line: 40
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 167
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\TrimStrings
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php'
+                      line: 27
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 167
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance.php'
+                      line: 86
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 167
+                      function: handle
+                      class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\fruitcake\laravel-cors\src\HandleCors.php'
+                      line: 52
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 167
+                      function: handle
+                      class: Fruitcake\Cors\HandleCors
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\fideloper\proxy\src\TrustProxies.php'
+                      line: 57
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 167
+                      function: handle
+                      class: Fideloper\Proxy\TrustProxies
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                      line: 103
+                      function: 'Illuminate\Pipeline\{closure}'
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php'
+                      line: 142
+                      function: then
+                      class: Illuminate\Pipeline\Pipeline
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php'
+                      line: 111
+                      function: sendRequestThroughRouter
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                      line: 299
+                      function: handle
+                      class: Illuminate\Foundation\Http\Kernel
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                      line: 287
+                      function: callLaravelOrLumenRoute
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                      line: 89
+                      function: makeApiCall
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                      line: 45
+                      function: makeResponseCall
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                      line: 35
+                      function: makeResponseCallIfConditionsPass
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Extractor.php'
+                      line: 222
+                      function: __invoke
+                      class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Extractor.php'
+                      line: 179
+                      function: iterateThroughStrategies
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Extractor.php'
+                      line: 116
+                      function: fetchResponses
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\GroupedEndpoints\GroupedEndpointsFromApp.php'
+                      line: 117
+                      function: processRoute
+                      class: Knuckles\Scribe\Extracting\Extractor
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\GroupedEndpoints\GroupedEndpointsFromApp.php'
+                      line: 75
+                      function: extractEndpointsInfoFromLaravelApp
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\GroupedEndpoints\GroupedEndpointsFromApp.php'
+                      line: 51
+                      function: extractEndpointsInfoAndWriteToDisk
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php'
+                      line: 48
+                      function: get
+                      class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php'
+                      line: 36
+                      function: handle
+                      class: Knuckles\Scribe\Commands\GenerateDocumentation
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Container\Util.php'
+                      line: 40
+                      function: 'Illuminate\Container\{closure}'
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php'
+                      line: 93
+                      function: unwrapIfClosure
+                      class: Illuminate\Container\Util
+                      type: '::'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php'
+                      line: 37
+                      function: callBoundMethod
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Container\Container.php'
+                      line: 653
+                      function: call
+                      class: Illuminate\Container\BoundMethod
+                      type: '::'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Console\Command.php'
+                      line: 136
+                      function: call
+                      class: Illuminate\Container\Container
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\symfony\console\Command\Command.php'
+                      line: 298
+                      function: execute
+                      class: Illuminate\Console\Command
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Console\Command.php'
+                      line: 121
+                      function: run
+                      class: Symfony\Component\Console\Command\Command
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\symfony\console\Application.php'
+                      line: 1005
+                      function: run
+                      class: Illuminate\Console\Command
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\symfony\console\Application.php'
+                      line: 299
+                      function: doRunCommand
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\symfony\console\Application.php'
+                      line: 171
+                      function: doRun
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Console\Application.php'
+                      line: 94
+                      function: run
+                      class: Symfony\Component\Console\Application
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php'
+                      line: 129
+                      function: run
+                      class: Illuminate\Console\Application
+                      type: '->'
+                    -
+                      file: 'C:\xampp\htdocs\heroku\artisan'
+                      line: 37
+                      function: handle
+                      class: Illuminate\Foundation\Console\Kernel
+                      type: '->'
+                properties:
+                  message:
+                    type: string
+                    example: 'Undefined variable: errors (View: C:\xampp\htdocs\heroku\resources\views\feedback\index.blade.php)'
+                  exception:
+                    type: string
+                    example: Facade\Ignition\Exceptions\ViewException
+                  file:
+                    type: string
+                    example: 'C:\xampp\htdocs\heroku\resources\views/feedback/index.blade.php'
+                  line:
+                    type: integer
+                    example: 11
+                  trace:
+                    type: array
+                    example:
+                      -
+                        file: 'C:\xampp\htdocs\heroku\resources\views/feedback/index.blade.php'
+                        line: 11
+                        function: handleError
+                        class: Illuminate\Foundation\Bootstrap\HandleExceptions
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Filesystem\Filesystem.php'
+                        line: 107
+                        function: require
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Filesystem\Filesystem.php'
+                        line: 108
+                        function: 'Illuminate\Filesystem\{closure}'
+                        class: Illuminate\Filesystem\Filesystem
+                        type: '::'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php'
+                        line: 58
+                        function: getRequire
+                        class: Illuminate\Filesystem\Filesystem
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\livewire\livewire\src\ComponentConcerns\RendersLivewireComponents.php'
+                        line: 35
+                        function: evaluatePath
+                        class: Illuminate\View\Engines\PhpEngine
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php'
+                        line: 61
+                        function: evaluatePath
+                        class: Livewire\CompilerEngineForIgnition
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\facade\ignition\src\Views\Engines\CompilerEngine.php'
+                        line: 37
+                        function: get
+                        class: Illuminate\View\Engines\CompilerEngine
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\View\View.php'
+                        line: 139
+                        function: get
+                        class: Facade\Ignition\Views\Engines\CompilerEngine
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\View\View.php'
+                        line: 122
+                        function: getContents
+                        class: Illuminate\View\View
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\View\View.php'
+                        line: 91
+                        function: renderContents
+                        class: Illuminate\View\View
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Http\Response.php'
+                        line: 69
+                        function: render
+                        class: Illuminate\View\View
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Http\Response.php'
+                        line: 35
+                        function: setContent
+                        class: Illuminate\Http\Response
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                        line: 794
+                        function: __construct
+                        class: Illuminate\Http\Response
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                        line: 763
+                        function: toResponse
+                        class: Illuminate\Routing\Router
+                        type: '::'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                        line: 695
+                        function: prepareResponse
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 128
+                        function: 'Illuminate\Routing\{closure}'
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php'
+                        line: 50
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 167
+                        function: handle
+                        class: Illuminate\Routing\Middleware\SubstituteBindings
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php'
+                        line: 127
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php'
+                        line: 103
+                        function: handleRequest
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php'
+                        line: 55
+                        function: handleRequestUsingNamedLimiter
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 167
+                        function: handle
+                        class: Illuminate\Routing\Middleware\ThrottleRequests
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 103
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                        line: 697
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                        line: 672
+                        function: runRouteWithinStack
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                        line: 636
+                        function: runRoute
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Routing\Router.php'
+                        line: 625
+                        function: dispatchToRoute
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php'
+                        line: 167
+                        function: dispatch
+                        class: Illuminate\Routing\Router
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 128
+                        function: 'Illuminate\Foundation\Http\{closure}'
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\livewire\livewire\src\DisableBrowserCache.php'
+                        line: 19
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 167
+                        function: handle
+                        class: Livewire\DisableBrowserCache
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php'
+                        line: 21
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull.php'
+                        line: 31
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 167
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php'
+                        line: 21
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TrimStrings.php'
+                        line: 40
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TransformsRequest
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 167
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\TrimStrings
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php'
+                        line: 27
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 167
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\ValidatePostSize
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance.php'
+                        line: 86
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 167
+                        function: handle
+                        class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\fruitcake\laravel-cors\src\HandleCors.php'
+                        line: 52
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 167
+                        function: handle
+                        class: Fruitcake\Cors\HandleCors
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\fideloper\proxy\src\TrustProxies.php'
+                        line: 57
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 167
+                        function: handle
+                        class: Fideloper\Proxy\TrustProxies
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php'
+                        line: 103
+                        function: 'Illuminate\Pipeline\{closure}'
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php'
+                        line: 142
+                        function: then
+                        class: Illuminate\Pipeline\Pipeline
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php'
+                        line: 111
+                        function: sendRequestThroughRouter
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                        line: 299
+                        function: handle
+                        class: Illuminate\Foundation\Http\Kernel
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                        line: 287
+                        function: callLaravelOrLumenRoute
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                        line: 89
+                        function: makeApiCall
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                        line: 45
+                        function: makeResponseCall
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php'
+                        line: 35
+                        function: makeResponseCallIfConditionsPass
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Extractor.php'
+                        line: 222
+                        function: __invoke
+                        class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Extractor.php'
+                        line: 179
+                        function: iterateThroughStrategies
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Extracting\Extractor.php'
+                        line: 116
+                        function: fetchResponses
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\GroupedEndpoints\GroupedEndpointsFromApp.php'
+                        line: 117
+                        function: processRoute
+                        class: Knuckles\Scribe\Extracting\Extractor
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\GroupedEndpoints\GroupedEndpointsFromApp.php'
+                        line: 75
+                        function: extractEndpointsInfoFromLaravelApp
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\GroupedEndpoints\GroupedEndpointsFromApp.php'
+                        line: 51
+                        function: extractEndpointsInfoAndWriteToDisk
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php'
+                        line: 48
+                        function: get
+                        class: Knuckles\Scribe\GroupedEndpoints\GroupedEndpointsFromApp
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php'
+                        line: 36
+                        function: handle
+                        class: Knuckles\Scribe\Commands\GenerateDocumentation
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Container\Util.php'
+                        line: 40
+                        function: 'Illuminate\Container\{closure}'
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php'
+                        line: 93
+                        function: unwrapIfClosure
+                        class: Illuminate\Container\Util
+                        type: '::'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php'
+                        line: 37
+                        function: callBoundMethod
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Container\Container.php'
+                        line: 653
+                        function: call
+                        class: Illuminate\Container\BoundMethod
+                        type: '::'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Console\Command.php'
+                        line: 136
+                        function: call
+                        class: Illuminate\Container\Container
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\symfony\console\Command\Command.php'
+                        line: 298
+                        function: execute
+                        class: Illuminate\Console\Command
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Console\Command.php'
+                        line: 121
+                        function: run
+                        class: Symfony\Component\Console\Command\Command
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\symfony\console\Application.php'
+                        line: 1005
+                        function: run
+                        class: Illuminate\Console\Command
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\symfony\console\Application.php'
+                        line: 299
+                        function: doRunCommand
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\symfony\console\Application.php'
+                        line: 171
+                        function: doRun
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Console\Application.php'
+                        line: 94
+                        function: run
+                        class: Symfony\Component\Console\Application
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php'
+                        line: 129
+                        function: run
+                        class: Illuminate\Console\Application
+                        type: '->'
+                      -
+                        file: 'C:\xampp\htdocs\heroku\artisan'
+                        line: 37
+                        function: handle
+                        class: Illuminate\Foundation\Console\Kernel
+                        type: '->'
+                    items:
+                      type: object
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the feedback.'
+        example: 19
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''

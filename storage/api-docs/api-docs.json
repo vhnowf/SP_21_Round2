@@ -1,0 +1,327 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Aftersales Api - SP21",
+        "description": "List Aftersales Api",
+        "version": "1.0"
+    },
+    "paths": {
+        "/feedbacks": {
+            "get": {
+                "tags": [
+                    "Feedback"
+                ],
+                "summary": "Show list feedbacks",
+                "operationId": "06ef48a76c0e8cc754a917b101dd574d",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "_id": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "email": {
+                                                        "type": "string",
+                                                        "example": "example@gmail.com"
+                                                    },
+                                                    "subject": {
+                                                        "type": "string",
+                                                        "example": "example subject"
+                                                    },
+                                                    "message": {
+                                                        "type": "string",
+                                                        "example": "example message"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "example": "2021-12-11T09:25:53.000000Z"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "example": "2021-12-11T09:25:53.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/feedback/store": {
+            "post": {
+                "tags": [
+                    "Feedback"
+                ],
+                "summary": "Create Feedback",
+                "operationId": "030c89d1f19349feb5448709540b9097",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "subject": {
+                                                "type": "string"
+                                            },
+                                            "message": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "email": "example@gmail.com",
+                                    "subject": "example title",
+                                    "message": "example content"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "email": {
+                                            "type": "string",
+                                            "example": "example@gmail.com"
+                                        },
+                                        "subject": {
+                                            "type": "string",
+                                            "example": "subject"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "message"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/inbox/store": {
+            "post": {
+                "tags": [
+                    "Inbox"
+                ],
+                "summary": "Send Message",
+                "operationId": "b8663e4b8cb90c2f8bcd58f2ef90dc79",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "message": {
+                                                "type": "message",
+                                                "example": "Example message"
+                                            },
+                                            "user_id": {
+                                                "type": "number",
+                                                "example": 2
+                                            },
+                                            "receiver": {
+                                                "type": "number",
+                                                "example": 1
+                                            },
+                                            "is_seen": {
+                                                "type": "number",
+                                                "example": 1
+                                            },
+                                            "file": {
+                                                "type": "string",
+                                                "example": "NULL"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id": 1,
+                                    "message": "example message",
+                                    "user_id": 2,
+                                    "receiver": 1,
+                                    "is_seen": 1,
+                                    "file": "NULL"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "example message"
+                                        },
+                                        "user_id": {
+                                            "type": "number",
+                                            "example": 2
+                                        },
+                                        "receiver": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "is_seen": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "file": {
+                                            "type": "string",
+                                            "example": "NULL"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/inbox/{id}": {
+            "get": {
+                "tags": [
+                    "Inbox"
+                ],
+                "summary": "Display inboxes list for admin",
+                "operationId": "a1866ebccd0a782b94e8a466f90ba8bf",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "_id": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "message": {
+                                                        "type": "message",
+                                                        "example": "Example message"
+                                                    },
+                                                    "user_id": {
+                                                        "type": "number",
+                                                        "example": "2"
+                                                    },
+                                                    "receiver": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "is_seen": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "file": {
+                                                        "type": "string",
+                                                        "example": "NULL"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
