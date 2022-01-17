@@ -45,7 +45,7 @@ class FeedbackController extends Controller
         ], $messages);
 
         $feedback = Feedback::create($request->all());
-        dd($feedback);
+        //dd($feedback);
         return view('alert');
     }
 }
