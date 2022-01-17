@@ -1,5 +1,3 @@
-# Installation
-
 ## Step 1:
 
 Clone this repo and run on this folder
