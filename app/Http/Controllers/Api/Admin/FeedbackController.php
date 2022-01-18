@@ -143,10 +143,20 @@ class FeedbackController extends Controller
      *     )
      * )
      */ 
-   public function show(Request $request, $id)
+   public function show(Request $request)
     {
-      $feedback = Feedback::where('id', $id);  
-      return response()->json($feedback);
+      $feedback = Feedback::where('id', $request->id)->get();  
+      if( $feedback == null ) {
+        return response()->json([
+          'success' => false,
+          'msg' => 'Not feedback available'
+        ],400);
+      }
+      return response()->json([
+        'success' => true, 
+        'data' => $feedback
+      ],200);
+
     }
 
   /**
@@ -201,9 +211,18 @@ class FeedbackController extends Controller
      */
     public function destroy(Request $request, $id)
     { 
-      $feedback = Feedback::where('id', $id)->delete();
-      $feedbacks = Feedback::all();
-      return response()->json($feedbacks);
+      $feedback = Feedback::where('id', $id)->get();
+      if($feedback == null) {
+        return response()->json([
+          'success' => false,
+          'msg' => 'Not available feedback to delete'
+        ],400);
+      }
+      
+      return response()->json([
+        'success' => true,
+        'msg' => 'Delete successfully'
+      ],200);
     }
 
   //  public function massDestroy(MassDestroyCouponRequest $request)
