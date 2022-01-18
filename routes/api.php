@@ -21,4 +21,4 @@ Route::post('/feedback/store', [App\Http\Controllers\Api\FeedbackController::cla
 Route::get('/feedbacks', [App\Http\Controllers\Api\Admin\FeedbackController::class,'index']);
 Route::post('/api/inbox/store', [App\Http\Controllers\Api\InboxController::class, 'index']);
 Route::get('/feedbacks/{id}', [App\Http\Controllers\Api\Admin\FeedbackController::class,'show']);
-Route::get('feedbacks/{id}/delete',[App\Http\Controllers\Api\Admin\FeedbackController::class,'destroy']);
+Route::delete('feedbacks/{id}',[App\Http\Controllers\Api\Admin\FeedbackController::class,'destroy']);
